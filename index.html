@@ -163,17 +163,19 @@
     </section>
   </div>
   <div class="pagina"><img class="pg" src="img/p4.jpg" alt="Dress code: esporte fino. Com carinho, pedimos que o rosa fique reservado para a debutante."></div>
-  <div class="pagina"><img class="pg" src="img/p5.jpg" alt="Localização: Alameda das Framboesas, 151 - Caminho das Árvores, Salvador - BA, 41820-450."></div>
+  <div class="pagina"><img class="pg" src="img/p5.jpg" alt="Localização: Espaço Felicità, R. Fernando José Guimarães Rocha, 123 - Imbuí, Salvador - BA, 41741-090."></div>
   <div class="pagina"><img class="pg" src="img/p6.jpg" alt="Manual do convidado: atente-se ao horário descrito no convite; chegue na hora para poder aproveitar cada momento da festa. Teremos um dia incrível, de muita alegria e diversão; capriche no look para a festa! Confirme sua presença até 04 de novembro de 2026 para garantir que seu nome esteja na lista de convidados. Cada pessoa convidada faz parte da minha história; caso não possa comparecer, por favor, nos informe. Obrigada!"></div>
-  <div class="pagina"><img class="pg" src="img/p7.jpg" alt="Clique nos ícones para interagir: localização e confirme sua presença.">
-    <a class="ponto" id="p-mapa" style="left:35.6%;top:82.8%" target="_blank" rel="noopener" aria-label="Abrir localização no mapa"
-       href="https://www.google.com/maps?cid=16861065116115384104"></a>
-    <a class="ponto" id="p-rsvp" style="left:65.6%;top:82.8%" target="_blank" rel="noopener" aria-label="Confirmar presença" href="#"></a>
+  <div class="pagina"><img class="pg" src="img/p7.jpg" alt="Lista de presentes. O que eu amaria ganhar: body splash e perfume, hidratante, make, itens de cabelo, acessórios, bolsas, berloque Vivara, blusas tamanho P, short tamanho 38, calça tamanho 40, calçado 40/41. Minhas marcas favoritas: C&amp;A, Centauro, Farm, Florenza, O Boticário, Prata e Prata, Renner, Romanel, Sephora, Victoria's Secret, Vivara, Youcom."></div>
+  <div class="pagina"><img class="pg" src="img/p8.jpg" alt="Clique nos ícones para interagir: localização, confirme sua presença e lista de presentes.">
+    <a class="ponto" id="p-mapa" style="left:21.3%;top:82.8%" target="_blank" rel="noopener" aria-label="Abrir localização no mapa"
+       href="https://www.google.com/maps?cid=4821349465897848643"></a>
+    <a class="ponto" id="p-rsvp" style="left:50%;top:82.8%" target="_blank" rel="noopener" aria-label="Confirmar presença" href="#"></a>
+    <a class="ponto" id="p-lista" style="left:78.7%;top:82.8%" aria-label="Ver lista de presentes" href="#"></a>
   </div>
  </div>
 </main>
 <div class="dica" id="dica"><svg viewBox="0 0 24 24"><path d="M14 7l-5 5 5 5"/></svg>Puxe o canto para virar a página</div>
-<div class="pontos" id="pontos"><i class="ativo"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="pontos" id="pontos"><i class="ativo"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 <button class="seta" id="ant" type="button" aria-label="Página anterior"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
 <button class="seta" id="prox" type="button" aria-label="Próxima página"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
 <canvas id="poeira" aria-hidden="true"></canvas>
@@ -231,8 +233,7 @@
 
 
   /* ---------- mapa e confirmação abrem dentro do convite (a música não para) ---------- */
-  var MAPA_APP='https://www.google.com/maps?cid=16861065116115384104';
-  var MAPA_EMBED='https://maps.google.com/maps?q=-12.9820212,-38.4567149&z=17&output=embed';
+  var MAPA_APP='https://www.google.com/maps?cid=4821349465897848643';
   var janela=document.getElementById('janela'), jf=document.getElementById('janela-frame'), jt=document.getElementById('janela-titulo'),
       jr=document.getElementById('janela-rodape'), jx=document.getElementById('janela-externo');
   function abrirJanela(titulo,src,externo){
@@ -369,6 +370,7 @@
   }
   function proxima(){ if(animando||atual>=folhas.length-1) return; var f=folhas[atual]; animar(f,VIRADA(),850,H*0.18,function(){ irPara(atual+1); }); }
   function anterior(){ if(animando||atual<=0) return; var f=folhas[atual-1]; animar(f,v(W,H),850,H*0.18,function(){ irPara(atual-1); }); }
+  document.getElementById('p-lista').addEventListener('click',function(e){ e.preventDefault(); anterior(); });
   // ---------- arrastar ----------
   function local(e){ var r=palco.getBoundingClientRect(), t=e.touches?e.touches[0]:e; return v(t.clientX-r.left,t.clientY-r.top); }
   function limita(P){
